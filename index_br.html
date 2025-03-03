@@ -5,34 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DealeGear</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f4f6;
-            text-align: center;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
+            max-width: 1000px;
+            margin: auto;
             padding: 20px;
-            background: white;
+            background: #1e1e1e;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
         h1 {
-            color: #333;
+            font-size: 2.5em;
+            color: #00bcd4;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+            color: #b0bec5;
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
         .project {
-            background: #fff;
-            margin: 10px 0;
-            padding: 15px;
+            background: #242424;
+            padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .project:hover {
+            transform: scale(1.05);
         }
         .project h3 {
-            margin: 0;
-            color: #222;
+            color: #00bcd4;
+            margin-bottom: 10px;
+        }
+        .project p {
+            color: #b0bec5;
+            font-size: 1em;
         }
     </style>
 </head>
@@ -41,7 +65,7 @@
         <h1>DealeGear</h1>
         <p>Uma plataforma para inovação, explorando ideias e desenvolvendo soluções para um futuro melhor.</p>
         <h2>Projetos em Desenvolvimento</h2>
-        <div id="projects"></div>
+        <div class="projects" id="projects"></div>
     </div>
     
     <script>
