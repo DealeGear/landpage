@@ -84,4 +84,61 @@
         <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Flag_of_Brazil.svg" alt="Bandeira do Brasil" onclick="scrollToSection('sobre')">
         <span onclick="scrollToSection('sobre')">Sobre</span>
         <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos EUA" onclick="scrollToSection('about')">
-        <span onclick="scrollToSection('about')
+        <span onclick="scrollToSection('about')">About</span>
+    </div>
+    
+    <div class="container">
+        <h1 id="sobre">DealeGear</h1>
+        <p>Uma plataforma para inovação, explorando ideias e desenvolvendo soluções para um futuro melhor.</p>
+        <h2>Projetos em Desenvolvimento</h2>
+        <div class="projects" id="projects"></div>
+        <h2>Em breve</h2>
+        <div class="projects" id="soon"></div>
+    </div>
+    
+    <div class="container" id="about" style="margin-top: 40px;">
+        <h1>DealeGear</h1>
+        <p>A platform for innovation, exploring ideas and developing solutions for a better future.</p>
+        <h2>Projects in Development</h2>
+        <div class="projects" id="projects-en"></div>
+        <h2>Coming Soon</h2>
+        <div class="projects" id="soon-en"></div>
+    </div>
+    
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        const projects = [
+            { name: "Stairs", description: "Uma plataforma para ajudar pessoas a desenvolverem seus próprios projetos e mudarem de carreira.", description_en: "A platform to help people develop their own projects and change careers." },
+            { name: "OneVision", description: "Dashboard com gráficos e dados abertos sobre economia, população e clima global.", description_en: "Dashboard with charts and open data on economy, population, and global climate." },
+            { name: "MyHeart", description: "Simulação virtual de um coração humano com possibilidade de agregar novas funcionalidades.", description_en: "Virtual simulation of a human heart with the possibility to add new functionalities." },
+            { name: "Segnetic", description: "Plataforma focada em defesa cibernética, prevenção a fraudes e golpes.", description_en: "Platform focused on cybersecurity, fraud prevention, and scams." },
+        ];
+
+        const soonProjects = [
+            { name: "O Segredo do Sucesso", link: "https://dealegear.wixsite.com/meusite" },
+            { name: "A Próxima Revolução", link: "https://dealegear.wixsite.com/meusite" }
+        ];
+
+        function populateProjects(container, projects, isSoon = false) {
+            projects.forEach(project => {
+                const projectDiv = document.createElement("div");
+                projectDiv.classList.add("project");
+                if (isSoon) {
+                    projectDiv.innerHTML = `<h3>${project.name}</h3><a href="${project.link}" target="_blank">O Segredo do Sucesso é Começar</a>`;
+                } else {
+                    projectDiv.innerHTML = `<h3>${project.name}</h3><p>${project.description}</p>`;
+                }
+                container.appendChild(projectDiv);
+            });
+        }
+
+        populateProjects(document.getElementById("projects"), projects);
+        populateProjects(document.getElementById("projects-en"), projects.map(p => ({ ...p, description: p.description_en })));
+        populateProjects(document.getElementById("soon"), soonProjects, true);
+        populateProjects(document.getElementById("soon-en"), soonProjects.map(p => ({ ...p })), true);
+    </script>
+</body>
+</html>
