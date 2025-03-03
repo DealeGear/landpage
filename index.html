@@ -100,22 +100,17 @@
     </div>
     
     <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
         const projects = [
             { name: "Stairs", description: "Uma plataforma para ajudar pessoas a desenvolverem seus próprios projetos e mudarem de carreira.", description_en: "A platform to help people develop their own projects and change careers." },
             { name: "OneVision", description: "Dashboard com gráficos e dados abertos sobre economia, população e clima global.", description_en: "Dashboard with charts and open data on economy, population, and global climate." },
             { name: "MyHeart", description: "Simulação virtual de um coração humano com possibilidade de agregar novas funcionalidades.", description_en: "Virtual simulation of a human heart with the possibility to add new functionalities." },
             { name: "Segnetic", description: "Plataforma focada em defesa cibernética, prevenção a fraudes e golpes.", description_en: "Platform focused on cybersecurity, fraud prevention, and scams." },
             { name: "Bosque das Frutíferas", description: "Espaços verdes na periferia para educação ambiental e responsabilidade social.", description_en: "Green spaces in the outskirts for environmental education and social responsibility." },
-            { name: "Futurismo", description: "Exploração de tecnologias emergentes como reatores de fusão portáteis para veículos e robôs.", description_en: "Exploration of emerging technologies such as portable fusion reactors for vehicles and robots." },
-            { name: "3GTO", description: "Modelo de automação e controle para testes reais.", description_en: "Automation and control model for real-world testing." },
-            { name: "Oxygen", description: "Estudo sobre tecnologias de energia sustentável.", description_en: "Study on sustainable energy generation technologies." },
-            { name: "Viver é uma Arte", description: "Galerias de arte acessíveis para talentos de baixa renda.", description_en: "Affordable art galleries for low-income talents." },
-            { name: "UnderSea", description: "Exploração sustentável e segura dos oceanos.", description_en: "Sustainable and safe exploration of the oceans." },
-            { name: "OneDAO", description: "Algoritmo de gestão autônoma e descentralizada de projetos.", description_en: "Autonomous and decentralized project management algorithm." },
-            { name: "OneChain", description: "Oráculo que registra e disponibiliza informações automatizadas.", description_en: "Oracle that records and provides automated information." },
-            { name: "Dyris", description: "Monitoramento de dados médicos durante o sono.", description_en: "Medical data monitoring during sleep." },
-            { name: "Fabr", description: "Impacto da revolução industrial 4.0 na sociedade.", description_en: "Impact of the Fourth Industrial Revolution on society." },
-            { name: "Mecânico Fantasma", description: "Monitoramento inteligente de veículos via sensores.", description_en: "Intelligent vehicle monitoring via sensors." }
+            { name: "Futurismo", description: "Exploração de tecnologias emergentes como reatores de fusão portáteis para veículos e robôs.", description_en: "Exploration of emerging technologies such as portable fusion reactors for vehicles and robots." }
         ];
 
         const projectsContainer = document.getElementById("projects");
