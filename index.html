@@ -71,9 +71,11 @@
             color: #00bcd4;
             margin-bottom: 10px;
         }
-        .project p {
+        .project a {
+            text-decoration: none;
             color: #b0bec5;
             font-size: 1em;
+            display: block;
         }
     </style>
 </head>
@@ -82,59 +84,4 @@
         <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Flag_of_Brazil.svg" alt="Bandeira do Brasil" onclick="scrollToSection('sobre')">
         <span onclick="scrollToSection('sobre')">Sobre</span>
         <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos EUA" onclick="scrollToSection('about')">
-        <span onclick="scrollToSection('about')">About</span>
-    </div>
-    
-    <div class="container">
-        <h1 id="sobre">DealeGear</h1>
-        <p>Uma plataforma para inovação, explorando ideias e desenvolvendo soluções para um futuro melhor.</p>
-        <h2>Projetos em Desenvolvimento</h2>
-        <div class="projects" id="projects"></div>
-    </div>
-    
-    <div class="container" id="about" style="margin-top: 40px;">
-        <h1>DealeGear</h1>
-        <p>A platform for innovation, exploring ideas and developing solutions for a better future.</p>
-        <h2>Projects in Development</h2>
-        <div class="projects" id="projects-en"></div>
-    </div>
-    
-    <script>
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
-
-        const projects = [
-            { name: "Stairs", description: "Uma plataforma para ajudar pessoas a desenvolverem seus próprios projetos e mudarem de carreira.", description_en: "A platform to help people develop their own projects and change careers." },
-            { name: "OneVision", description: "Dashboard com gráficos e dados abertos sobre economia, população e clima global.", description_en: "Dashboard with charts and open data on economy, population, and global climate." },
-            { name: "MyHeart", description: "Simulação virtual de um coração humano com possibilidade de agregar novas funcionalidades.", description_en: "Virtual simulation of a human heart with the possibility to add new functionalities." },
-            { name: "Segnetic", description: "Plataforma focada em defesa cibernética, prevenção a fraudes e golpes.", description_en: "Platform focused on cybersecurity, fraud prevention, and scams." },
-            { name: "3GTO", description: "Modelo para aprimorar automação e controle em testes reais.", description_en: "Model to enhance automation and control in real-world testing." },
-            { name: "Oxygen", description: "Estudo sobre geração de energia sustentável e otimização.", description_en: "Study on sustainable energy generation and optimization." },
-            { name: "Viver é uma Arte", description: "Galerias de arte acessíveis para talentos de baixa renda.", description_en: "Affordable art galleries for low-income talents." },
-            { name: "UnderSea", description: "Exploração sustentável dos oceanos e seus mistérios.", description_en: "Sustainable exploration of the oceans and their secrets." },
-            { name: "OneDAO", description: "Algoritmo para gestão autônoma e descentralizada de projetos.", description_en: "Algorithm for autonomous and decentralized project management." },
-            { name: "OneChain", description: "Oráculo automatizado para registro e distribuição de informações.", description_en: "Automated oracle for recording and distributing information." },
-            { name: "Dyris", description: "Monitoramento de dados médicos durante o sono.", description_en: "Monitoring of medical data during sleep." },
-            { name: "Fabr", description: "Revolução industrial com IA, sensores e robótica.", description_en: "Industrial revolution with AI, sensors, and robotics." },
-            { name: "Mecânico Fantasma", description: "Monitoramento inteligente de veículos para detecção precoce de falhas.", description_en: "Smart vehicle monitoring for early fault detection." }
-                     
-        ];
-
-        const projectsContainer = document.getElementById("projects");
-        const projectsContainerEn = document.getElementById("projects-en");
-        
-        projects.forEach(project => {
-            const projectDiv = document.createElement("div");
-            projectDiv.classList.add("project");
-            projectDiv.innerHTML = `<h3>${project.name}</h3><p>${project.description}</p>`;
-            projectsContainer.appendChild(projectDiv);
-            
-            const projectDivEn = document.createElement("div");
-            projectDivEn.classList.add("project");
-            projectDivEn.innerHTML = `<h3>${project.name}</h3><p>${project.description_en}</p>`;
-            projectsContainerEn.appendChild(projectDivEn);
-        });
-    </script>
-</body>
-</html>
+        <span onclick="scrollToSection('about')
